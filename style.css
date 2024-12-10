@@ -1,0 +1,115 @@
+/* General Styling for the Crafting Button */
+.crafting-button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #388E3C;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .crafting-button:hover {
+    background-color: #45A049;
+    border-color: #2E7D32;
+  }
+  
+  .crafting-button:active {
+    background-color: #388E3C;
+    border-color: #1B5E20;
+  }
+  
+  /* Crafting UI Panel Styling */
+  .crafting-ui {
+    background: #1e2125;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    color: white;
+    padding: 15px;
+    width: 400px;
+    max-height: 500px;
+    overflow-y: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .crafting-ui h2 {
+    color: #4CAF50;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .crafting-ui .ingredient-list {
+    margin: 10px 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .crafting-ui .ingredient-list li {
+    padding: 5px;
+    border-bottom: 1px solid #555;
+  }
+  
+  .crafting-ui .craft-button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .crafting-ui .craft-button:hover {
+    background-color: #45A049;
+  }
+  
+  .crafting-ui .close-button {
+    display: block;
+    margin: 10px auto;
+    padding: 6px 12px;
+    background-color: #F44336;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .crafting-ui .close-button:hover {
+    background-color: #E53935;
+  }
+  
+  /* Style for Tabs and Navigation Row */
+  .tab-crafting {
+    position: relative;
+    padding: 10px;
+    color: #4CAF50;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .tab-crafting:hover {
+    background-color: #2E7D32;
+    border-color: #388E3C;
+  }
+  
+  .tab-crafting.active {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #1B5E20;
+  }
+  

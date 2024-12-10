@@ -1,0 +1,29 @@
+{
+  "id": "potion-crafting-system",
+  "title": "Potion Crafting System",
+  "description": "A module that allows players to craft potions using ingredients in their inventory.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Reaper",
+      "email": "your.email@example.com",
+      "url": "https://your-website-or-repo-url.com"
+    }
+  ],
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11",
+    "maximum": "11"
+  },
+  "scripts": ["main.js"],
+  "styles": [ "styles/style.css"],
+  "manifest": "https://your-repo-url/module.json",
+  "download": "https://your-repo-url/potion-crafting-system.zip",
+  "license": "MIT",
+  "readme": "README.md",
+  "bugs": "https://your-repo-url/issues",
+  "changelog": "CHANGELOG.md"
+}
+
+
+
