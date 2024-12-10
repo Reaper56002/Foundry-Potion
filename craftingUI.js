@@ -9,9 +9,9 @@ export function openPotionCraftingUI(actor) {
     }
 
     const grades = ["Common", "Uncommon", "Rare", "Epic", "Legendary"];
-    let selectedGrade = "Common"; // Default to Common potions
+    let selectedGrade = "Common"; 
 
-    // Render the dialog
+    
     const dialogContent = `
         <h1>Potion Crafting</h1>
         <div>
@@ -31,10 +31,10 @@ export function openPotionCraftingUI(actor) {
             close: { label: "Close" }
         },
         render: (html) => {
-            // Populate recipe list on dialog render
+            
             populateRecipeList(html, actor, selectedGrade);
 
-            // Handle grade filter change
+            
             html.find("#grade-filter").change(function () {
                 selectedGrade = $(this).val();
                 populateRecipeList(html, actor, selectedGrade);
@@ -45,9 +45,7 @@ export function openPotionCraftingUI(actor) {
     craftingDialog.render(true);
 }
 
-/**
- * Populate the recipe list for the given actor and grade.
- */
+
 function populateRecipeList(html, actor, grade) {
     const recipes = potionRecipes.filter(recipe => recipe.grade === grade);
     const recipeList = html.find("#recipe-list");
@@ -72,17 +70,14 @@ function populateRecipeList(html, actor, grade) {
     listHtml += `</ul>`;
     recipeList.html(listHtml);
 
-    // Attach event listeners for crafting buttons
+    
     html.find(".craft-btn").click(function () {
         const potionName = $(this).data("name");
         handleCraftPotion(actor, potionName, html);
     });
 }
 
-/**
- * Handle crafting a potion for a specific actor in D&D5e.
- * Ensures that the item created is a valid D&D5e consumable item with proper fields.
- */
+
 async function handleCraftPotion(actor, potionName, html) {
     const recipe = potionRecipes.find(r => r.name === potionName);
     const resultArea = html.find("#crafting-result");
@@ -97,15 +92,11 @@ async function handleCraftPotion(actor, potionName, html) {
         return;
     }
 
-    // Consume ingredients before creating the potion
     await consumeIngredients(actor, recipe.ingredients);
 
-    // Update the result area with success message
     resultArea.html(`<p class="success">Successfully crafted ${potionName}!</p>`);
 
-    // Create the crafted potion as a new item in the actor's inventory
-    // D&D5e items typically store their description in system.description.value
-    // and their quantity in system.quantity.
+    
     await actor.createEmbeddedDocuments("Item", [
         {
             name: recipe.name,
@@ -115,10 +106,7 @@ async function handleCraftPotion(actor, potionName, html) {
                 description: {
                     value: recipe.description
                 }
-                // Additional fields can be included as needed, e.g.:
-                // "rarity": "Common",
-                // "weight": 0.1,
-                // "price": 50,
+                
             }
         }
     ]);
